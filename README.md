@@ -1,27 +1,13 @@
-# DesafioDixPortalstylo
+# Portal Stylo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+O objetivo do desafio foi desenvolver um portal de notícias, utilizando Angular Universal.
 
-## Development server
+## Orientação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[Mockup](https://www.figma.com/proto/z8MA1EV4kk7lsqr0f9Dawh/PORTAL-STYLO?page-id=0%3A1&node-id=1-3&scaling=scale-down-width&starting-point-node-id=1%3A3&t=9bjwS80klo1j2FPL-1)
 
-## Code scaffolding
+[API](https://documenter.getpostman.com/view/10608423/2s93eVWtPf)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Angular
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 17.0.10.
