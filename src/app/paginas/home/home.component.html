@@ -1,0 +1,418 @@
+<div class="container">
+  <div class="advertisement">
+    <div class="advertisement-title">Publicidade</div>
+    <div class="advertisement-images">
+      <img class="advertisement-image" [src]="filtrados?.data.banners[currentBannerIndex].image" alt="Publicidade">
+    </div>
+    <div class="advertisement-dashes">
+      <div class="dash" (click)="changeBanner(0)" [class.active]="currentBannerIndex === 0"></div>
+      <div class="dash" (click)="changeBanner(1)" [class.active]="currentBannerIndex === 1"></div>
+      <div class="dash" (click)="changeBanner(2)" [class.active]="currentBannerIndex === 2"></div>
+    </div>
+  </div>
+
+  <div class="divider-container">
+    <div class="left-content">
+      <div class="destaques-header">
+        <span class="retangle"></span>
+        <div class="title">Destaques</div>
+      </div>
+      <div class="noticias">
+        <div class="noticia" id="n1">
+          <img src="/assets/img/home/des1.png" alt="Descrição da imagem 1"/>
+          <div class="noticia-content">
+            <div class="titulo">Inauguração</div>
+            <div class="descricao">Prefeitura de Palmas inaugura Núcleo de Atendimento Integrado para atender menores
+              infratores
+            </div>
+          </div>
+        </div>
+        <div class="noticia" id="n2">
+          <img src="/assets/img/home/des2.jpg" alt="Descrição da imagem 2"/>
+          <div class="noticia-content">
+            <div class="titulo">RECUPERAÇÃO DE DOCUMENTOS</div>
+            <div class="descricao">Tocantins garante que incêndio em prédio não atingiu documentos
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="noticias">
+        <div class="noticia" id="n3">
+          <div class="noticia-content">
+            <div class="titulo">CPP SUPERLOTADA</div>
+            <div class="descricaomenor">Promotor pede transferência de presos de Palmas para o interior
+            </div>
+          </div>
+        </div>
+        <div class="noticia-divider"></div>
+        <div class="noticia" id="n4">
+          <div class="noticia-content">
+            <div class="titulo">Benefícios</div>
+            <div class="descricaomenor">Confira se você terá direito ao abono salarial em 2023
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="publicidade">
+        <div class="advertisement-title">Publicidade</div>
+        <div class="imagens-publicidade">
+          <img src="/assets/img/home/pub/pub-img-1.png" alt="Publicidade 1"/>
+          <img src="/assets/img/home/pub/pub-img-2.png" alt="Publicidade 2"/>
+          <img src="/assets/img/home/pub/pub-img-1.png"/>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="mais-lidas">
+        <div class="destaques-header">
+          <span class="retangle"></span>
+          <div class="title">Mais Lidas</div>
+        </div>
+        <div class="noticias">
+          <div class="noticia">
+            <div class="numero">1</div>
+            <div class="noticia-content">
+              <div class="titulo">BENEFÍCIOS</div>
+              <div class="descricao">AL aprova Orçamento PPA e MP que congela benefícios a servidores</div>
+            </div>
+          </div>
+          <div class="noticia">
+            <div class="numero">2</div>
+            <div class="noticia-content">
+              <div class="titulo">BENEFÍCIOS</div>
+              <div class="descricao">AL aprova Orçamento PPA e MP que congela benefícios a servidores</div>
+            </div>
+          </div>
+          <div class="noticia">
+            <div class="numero">3</div>
+            <div class="noticia-content">
+              <div class="titulo">BENEFÍCIOS</div>
+              <div class="descricao">AL aprova Orçamento PPA e MP que congela benefícios a servidores</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="politica">
+        <div class="destaques-header">
+          <span class="retangle"></span>
+          <div class="title">Política</div>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="images">
+              <img *ngFor="let image of imagesPolitica; let i = index" [src]="image" alt="Imagem {{i + 1}}"
+                   [class.active]="i === currentIndexPolitica" class="carousel-image">
+            </div>
+            <div class="indicators">
+              <div class="ellipse" *ngFor="let image of imagesPolitica; let i = index"
+                   [class.active]="i === currentIndexPolitica"></div>
+            </div>
+            <div class="indicator-bar"></div>
+          </div>
+          <div class="news-info">
+            <div *ngFor="let newsItem of newsPolitica; let i = index" [class.active]="i === currentIndexPolitica"
+                 class="news-item">
+              <div *ngIf="i === 1" class="divider"></div>
+              <div class="news-title">{{ newsItem.title }}</div>
+              <div class="news-description">{{ newsItem.description }}</div>
+              <div *ngIf="i === 0" class="divider"></div>
+            </div>
+          </div>
+        </div>
+        <div class="noticias">
+          <div class="noticia" id="n5">
+            <div class="noticia-content">
+              <div class="titulo">{{ politica?.[0].contents[2].title }}</div>
+              <div class="descricaomenor">{{ politica?.[0].contents[2].subtitle }}
+              </div>
+            </div>
+          </div>
+          <div class="noticia-divider"></div>
+          <div class="noticia" id="n6">
+            <div class="noticia-content">
+              <div class="titulo">{{ politica?.[0].contents[3].title }}</div>
+              <div class="descricaomenor">{{ politica?.[0].contents[3].subtitle }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="geral">
+        <div class="destaques-header">
+          <span class="retangle"></span>
+          <div class="title">Geral</div>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="images">
+              <img *ngFor="let image of imagesGeral; let i = index" [src]="image" alt="Imagem {{i + 1}}"
+                   [class.active]="i === currentIndexGeral" class="carousel-image">
+            </div>
+            <div class="indicators">
+              <div class="ellipse" *ngFor="let image of imagesGeral; let i = index"
+                   [class.active]="i === currentIndexGeral"></div>
+            </div>
+            <div class="indicator-bar"></div>
+          </div>
+          <div class="news-info">
+            <div *ngFor="let newsItem of newsGeral; let i = index" [class.active]="i === currentIndexGeral"
+                 class="news-item">
+              <div *ngIf="i === 1" class="divider"></div>
+              <div class="news-title">{{ newsItem.title }}</div>
+              <div class="news-description">{{ newsItem.description }}</div>
+              <div *ngIf="i === 0" class="divider"></div>
+            </div>
+          </div>
+        </div>
+        <div class="noticias">
+          <div class="noticia" id="n7">
+            <div class="noticia-content">
+              <div class="titulo">GOLPE MILITAR</div>
+              <div class="descricaomenor">Juíza proíbe governo Bolsonaro de celebrar golpe militar de 1964
+              </div>
+            </div>
+          </div>
+          <div class="noticia-divider"></div>
+          <div class="noticia" id="n8">
+            <div class="noticia-content">
+              <div class="titulo">MEDICAÇÃO LIVRE</div>
+              <div class="descricaomenor">Laboratórios devem fornecer medicamentos para hospitais do TO
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="publicidade">
+        <div class="advertisement-title">Publicidade</div>
+        <div class="imagens-publicidade">
+          <img src="/assets/img/home/pub/pub-img-1.png" alt="Publicidade 1"/>
+          <img src="/assets/img/home/pub/pub-img-2.png" alt="Publicidade 2"/>
+          <img src="/assets/img/home/pub/pub-img-1.png"/>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="geral">
+        <div class="destaques-header">
+          <span class="retangle"></span>
+          <div class="title">MUNICÍPIOS</div>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="images">
+              <img *ngFor="let image of imagesMunicipio; let i = index" [src]="image" alt="Imagem {{i + 1}}"
+                   [class.active]="i === currentIndexMunicipio" class="carousel-image">
+            </div>
+            <div class="indicators">
+              <div class="ellipse" *ngFor="let image of imagesMunicipio; let i = index"
+                   [class.active]="i === currentIndexMunicipio"></div>
+            </div>
+            <div class="indicator-bar"></div>
+          </div>
+          <div class="news-info">
+            <div *ngFor="let newsItem of newsMunicipio; let i = index" [class.active]="i === currentIndexMunicipio"
+                 class="news-item">
+              <div *ngIf="i === 1" class="divider"></div>
+              <div class="news-title">{{ newsItem.title }}</div>
+              <div class="news-description">{{ newsItem.description }}</div>
+              <div *ngIf="i === 0" class="divider"></div>
+            </div>
+          </div>
+        </div>
+        <div class="noticias">
+          <div class="noticia" id="n9">
+            <div class="noticia-content">
+              <div class="titulo">{{ municipio?.[0].contents[2].title }}</div>
+              <div class="descricaomenor">{{ municipio?.[0].contents[2].subtitle }}
+              </div>
+            </div>
+          </div>
+          <div class="noticia-divider"></div>
+          <div class="noticia" id="n10">
+            <div class="noticia-content">
+              <div class="titulo">{{ municipio?.[0].contents[3].title }}</div>
+              <div class="descricaomenor">{{ municipio?.[0].contents[3].subtitle }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="instagram-section">
+        <div class="destaques-header">
+          <span class="retangle"></span>
+          <div class="title">Instragram</div>
+        </div>
+        <div class="posts-container">
+          <div *ngFor="let post of posts" class="post">
+            <img [src]="post.imageUrl" alt="Instagram Post" class="post-image">
+            <div class="post-info">
+              <div class="username">{{ post.username }}</div>
+              <div class="caption">{{ post.caption }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="twitter-section">
+        <div class="destaques-header">
+          <span class="retangle"></span>
+          <div class="title">Twitter</div>
+        </div>
+        <a class="twitter-timeline" href="https://twitter.com/matheuselmadi?ref_src=twsrc%5Etfw">Tweets by
+          matheuselmadi</a>
+      </div>
+    </div>
+
+    <div class="vertical-divider"></div>
+
+    <div class="right-content">
+      <div class="publicidade-right">
+        <div class="advertisement-title-right">Publicidade</div>
+        <img src="/assets/img/home/pub/pub-img-3.png" alt="Publicidade" width="300" height="300">
+      </div>
+
+      <div class="outras-noticias">
+        <div class="destaques-header">
+          <span class="retangle"></span>
+          <div class="title">ÚLTIMAS NOTÍCIAS</div>
+        </div>
+        <div>
+          <div class="noticia">
+            <div class="clock-icon"></div>
+            <div class="noticia-content">
+              <div class="titulo">{{ filtrados?.data.last_news[0]?.title }}</div>
+              <div class="descricao">{{ filtrados?.data.last_news[0]?.subtitle }}</div>
+            </div>
+          </div>
+          <div class="noticia">
+            <div class="clock-icon"></div>
+            <div class="noticia-content">
+              <div class="titulo">{{ filtrados?.data.last_news[1]?.title }}</div>
+              <div class="descricao">{{ filtrados?.data.last_news[1]?.subtitle }}</div>
+            </div>
+          </div>
+          <div class="noticia">
+            <div class="clock-icon"></div>
+            <div class="noticia-content">
+              <div class="titulo">{{ filtrados?.data.last_news[2]?.title }}</div>
+              <div class="descricao">{{ filtrados?.data.last_news[2]?.subtitle }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ver-mais-button">
+        <button>Ver mais</button>
+      </div>
+
+      <div class="publicidade-right">
+        <div class="advertisement-title-right">Publicidade</div>
+        <img src="/assets/img/home/pub/pub-img-3.png" alt="Publicidade" width="300" height="300">
+      </div>
+
+      <div class="enquete-section">
+        <div class="destaques-header">
+          <span class="retangle"></span>
+          <div class="title">Enquete</div>
+        </div>
+        <div class="enquete-question">{{ enquetes?.data[0].name }}</div>
+        <div class="enquete-options">
+          <label class="option" *ngFor="let alternativa of enquetes?.data[0].alternatives">
+            <input type="radio" name="alternativa" [value]="alternativa" [(ngModel)]="alternativaSelecionada" hidden>
+            <span class="ellipse"></span> {{ alternativa }}
+          </label>
+        </div>
+        <div class="enquete-buttons">
+          <button class="vote-button" [disabled]="!alternativaSelecionada"
+                  (click)="votarEnquete(enquetes?.data[0].id , alternativaSelecionada)">Votar
+          </button>
+          <button routerLink="/enquetes">Ver mais</button>
+        </div>
+      </div>
+
+      <div class="publicidade-right">
+        <div class="advertisement-title-right">Publicidade</div>
+        <img src="/assets/img/home/pub/pub-img-3.png" alt="Publicidade" width="300" height="300">
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="comunicar-erro-button">
+    <button>
+      <span>Comunicar erro</span>
+      <img src="/assets/img/home/icone-botao-erro.svg" width="24" height="24">
+    </button>
+  </div>
+
+  <div class="newsletter-card">
+    <div class="newsletter-title">
+      <div class="newsletter-titulo">Newsletter</div>
+      <div class="newsletter-desc">Preencha os dados e receba as novidades!</div>
+    </div>
+    <div class="newsletter-form">
+      <div class="inputs-wrapper">
+        <div>
+          <p>Nome completo</p>
+          <input type="text" placeholder="Informe seu nome">
+        </div>
+        <div>
+          <p>E-mail</p>
+          <input type="email" placeholder="Informe seu E-mail">
+        </div>
+      </div>
+      <label><input type="checkbox">Li e concordo com os <a>Termos de Uso e Políticas de Privacidade</a></label>
+      <button class="confirm-button">Confirmar</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal" *ngIf="mostrarModalResultados">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="destaques-header">
+        <span class="retangle"></span>
+        <div class="title">RESULTADO</div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div *ngFor="let key of Object.keys(enquetes?.data[0].results)" class="resultado">
+        <div class="result-label">{{ key }}</div>
+        <div class="result-bar">
+          <div class="result-bar-fill" [style.width]="enquetes?.data[0].results[key].percentage"></div>
+          <div class="result-number">{{ enquetes?.data[0].results[key].percentage }}</div>
+        </div>
+      </div>
+    </div>
+    <button class="confirm-button" (click)="fecharModalResultados()">Fechar</button>
+  </div>
+</div>
+
+<div class="aviso-cookies-container" *ngIf="mostrarAvisoCookies">
+  <div class="aviso-cookies-content">
+    <h3>Aviso de Cookies</h3>
+    <div class="aviso-cookies-text">
+      <p>
+        Usamos os cookies para otimizar as funcionalidades, personalizar o conteúdo e proporcionar melhor experiência de
+        uso para você. Saiba mais do <a routerLink="/privacy">termo de uso</a> e <a routerLink="/privacy">política de
+        privacidade</a>
+      </p>
+      <button (click)="aceitarCookies()">Aceitar</button>
+    </div>
+  </div>
+</div>

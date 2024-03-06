@@ -1,0 +1,136 @@
+.footer {
+  width: 100%;
+  height: 454.44px;
+  background-color: #454545;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  bottom: 0;
+  left: 0;
+  position: relative;
+
+  .logo {
+    //width: 323px;
+    //height: 77px;
+    position: absolute;
+    top: 67px;
+    left: 10%;
+  }
+
+  .text {
+    width: 334px;
+    height: 144px;
+    position: absolute;
+    top: 177px;
+    left: 10%;
+    text-align: justify;
+    font-size: 17.75px;
+    line-height: 24.4px;
+  }
+
+  .frame {
+    position: absolute;
+    top: 39px;
+    left: 40%;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 19.02px;
+  }
+
+  .title2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 19.02px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 19px;
+    }
+
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 18px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .frame2 {
+    position: absolute;
+    top: 39px;
+    left: 60%;
+  }
+
+  .frame3 {
+    position: absolute;
+    top: 39px;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .bottom-bar {
+    width: 100%;
+    height: 58px;
+    background-color: #5B5B5B;
+    position: absolute;
+    top: 396px;
+  }
+
+  .copy-right {
+    position: absolute;
+    top: 418px;
+    left: 10%;
+    font-size: 13.33px;
+  }
+
+  .version {
+    position: absolute;
+    top: 418px;
+    left: 50%;
+    font-size: 13.33px;
+    transform: translateX(-50%);
+  }
+
+  .developed-by {
+    position: absolute;
+    top: 418px;
+    right: calc(10% + 132.53px + 10px);
+    font-size: 13.33px;
+  }
+
+  .logo-dix {
+    position: absolute;
+    top: 412px;
+    right: 10%;
+    width: 132.53px;
+    height: 24.44px;
+  }
+}

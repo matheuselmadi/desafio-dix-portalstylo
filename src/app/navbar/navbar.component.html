@@ -1,0 +1,28 @@
+<div class="navbar">
+  <div class="logo"><img src="{{settings?.data.logo}}" alt="Logo Portal Stylo"></div>
+  <div class="search-box">
+    <input type="text" placeholder="Buscar no site"/>
+    <span class="search-icon"></span>
+  </div>
+  <div class="social-icons">
+    <a href="{{settings?.data.instagram_url}}" target="_blank" class="social-icon instagram"></a>
+    <a href="{{settings?.data.facebook_url}}" target="_blank" class="social-icon facebook"></a>
+    <a href="{{settings?.data.youtube_url}}" target="_blank" class="social-icon youtube"></a>
+    <a href="{{settings?.data.twitter_url}}" target="_blank" class="social-icon twitter"></a>
+  </div>
+  <div class="menu">
+    <ul>
+      <li routerLink="/home" routerLinkActive="selected" [routerLinkActiveOptions]="{exact: true}">HOME</li>
+      <li routerLink="/estado" routerLinkActive="selected">ESTADO</li>
+      <li routerLink="/municipio" routerLinkActive="selected">MUNICÍPIO</li>
+      <li routerLink="/nacional" routerLinkActive="selected">NACIONAL</li>
+      <li routerLink="/politica" routerLinkActive="selected">POLÍTICA</li>
+      <li routerLink="/saude" routerLinkActive="selected">SAÚDE</li>
+      <li routerLink="/policia" routerLinkActive="selected">POLÍCIA</li>
+      <li routerLink="/enquetes" routerLinkActive="selected">ENQUETES</li>
+      <li routerLink="/entretenimento" routerLinkActive="selected">ENTRETENIMENTO</li>
+      <li routerLink="/colunista" routerLinkActive="selected">COLUNISTA</li>
+    </ul>
+  </div>
+  <div class="bottom-bar"></div>
+</div>

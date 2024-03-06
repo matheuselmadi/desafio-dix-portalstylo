@@ -1,0 +1,20 @@
+.whatsapp-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  z-index: 1;
+  background-color: #25D366;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 0 5px 0 5px;
+  border: none;
+  box-shadow: 0 4px 4px 0 #00000040;
+  cursor: pointer;
+}
+
+.whatsapp-fab svg {
+  color: white;
+}

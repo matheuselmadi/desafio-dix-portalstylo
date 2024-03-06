@@ -1,0 +1,193 @@
+<div class="container">
+  <div class="advertisement">
+    <div class="advertisement-title">Publicidade</div>
+    <div class="advertisement-images">
+      <img class="advertisement-image" [src]="filtrados?.data.banners[currentBannerIndex].image" alt="Publicidade">
+    </div>
+    <div class="advertisement-dashes">
+      <div class="dash" (click)="changeBanner(0)" [class.active]="currentBannerIndex === 0"></div>
+      <div class="dash" (click)="changeBanner(1)" [class.active]="currentBannerIndex === 1"></div>
+      <div class="dash" (click)="changeBanner(2)" [class.active]="currentBannerIndex === 2"></div>
+    </div>
+  </div>
+
+  <div class="divider-container">
+    <div class="left-content">
+      <div class="destaques-header">
+        <span class="retangle"></span>
+        <div class="title">Enquetes em andamento</div>
+      </div>
+      <div class="enquete-section" *ngFor="let enquete of enquetes?.data; let i = index">
+        <div class="enquete-question">{{ enquete.name }}</div>
+        <div class="enquete-data">
+          <img src="/assets/img/enquetes/calendar.svg" width="20" height="20">
+          <span>Início: {{ enquete.start_date | date:'dd/MM/yy' }}</span>
+        </div>
+        <div class="enquete-data">
+          <img src="/assets/img/enquetes/calendar.svg" width="20" height="20">
+          <span>Fim: {{ enquete.end_date | date:'dd/MM/yy' }}</span>
+        </div>
+        <div class="enquete-options" *ngIf="enquete.vermais">
+          <label class="option" *ngFor="let alternativa of enquete.alternatives">
+            <input type="radio" name="alternativa" [value]="alternativa" [(ngModel)]="alternativaSelecionada" hidden>
+            <span class="ellipse"></span> {{ alternativa }}
+          </label>
+        </div>
+        <div class="enquete-buttons">
+          <button *ngIf="enquete.vermais" class="vote-button" [disabled]="!alternativaSelecionada"
+                  (click)="votarEnquete(enquete.id , alternativaSelecionada)">Votar
+          </button>
+          <button *ngIf="!enquete.vermais" (click)="enquete.vermais = true">Ver mais</button>
+          <button *ngIf="enquete.vermais" (click)="enquete.vermais = false">Ler menos</button>
+        </div>
+      </div>
+
+      <div class="publicidade">
+        <div class="advertisement-title">Publicidade</div>
+        <div class="imagens-publicidade">
+          <img src="/assets/img/home/pub/pub-img-1.png" alt="Publicidade 1"/>
+          <img src="/assets/img/home/pub/pub-img-2.png" alt="Publicidade 2"/>
+          <img src="/assets/img/home/pub/pub-img-1.png"/>
+        </div>
+      </div>
+
+      <div class="destaques-header">
+        <span class="retangle"></span>
+        <div class="title">VEJA TAMBÉM</div>
+      </div>
+      <div class="noticias">
+        <div class="noticia" id="n1">
+          <img src="/assets/img/home/des1.png" alt="Descrição da imagem 1"/>
+          <div class="noticia-content">
+            <div class="titulo">Inauguração</div>
+            <div class="descricao">Prefeitura de Palmas inaugura Núcleo de Atendimento Integrado para atender menores
+              infratores
+            </div>
+          </div>
+        </div>
+        <div class="noticia-divider"></div>
+        <div class="noticia" id="n2">
+          <img src="/assets/img/home/des2.jpg" alt="Descrição da imagem 2"/>
+          <div class="noticia-content">
+            <div class="titulo">RECUPERAÇÃO DE DOCUMENTOS</div>
+            <div class="descricao">Tocantins garante que incêndio em prédio não atingiu documentos
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vertical-divider"></div>
+
+    <div class="right-content">
+      <div class="publicidade-right">
+        <div class="advertisement-title-right">Publicidade</div>
+        <img src="/assets/img/home/pub/pub-img-3.png" alt="Publicidade" width="300" height="300">
+      </div>
+
+      <div class="outras-noticias">
+        <div class="destaques-header">
+          <span class="retangle"></span>
+          <div class="title">MAIS LIDAS</div>
+        </div>
+        <div>
+          <div class="noticia">
+            <div class="numero-mais">1</div>
+            <div class="noticia-content">
+              <div class="titulo">BENEFÍCIOS</div>
+              <div class="descricao">AL aprova Orçamento PPA e MP que congela benefícios a servidores</div>
+            </div>
+          </div>
+          <div class="noticia">
+            <div class="numero-mais">2</div>
+            <div class="noticia-content">
+              <div class="titulo">POLÍTICA</div>
+              <div class="descricao">Juíza proíbe governo Bolsonaro de celebrar golpe militar de 1964</div>
+            </div>
+          </div>
+          <div class="noticia">
+            <div class="numero-mais">3</div>
+            <div class="noticia-content">
+              <div class="titulo">POLÍTICA</div>
+              <div class="descricao">Juíza proíbe governo Bolsonaro de celebrar golpe militar de 1964</div>
+            </div>
+          </div>
+          <div class="noticia">
+            <div class="numero-mais">4</div>
+            <div class="noticia-content">
+              <div class="titulo">POLÍTICA</div>
+              <div class="descricao">Juíza proíbe governo Bolsonaro de celebrar golpe militar de 1964</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="publicidade-right">
+        <div class="advertisement-title-right">Publicidade</div>
+        <img src="/assets/img/home/pub/pub-img-3.png" alt="Publicidade" width="300" height="300">
+      </div>
+
+      <div class="outras-noticias">
+        <div class="destaques-header">
+          <span class="retangle"></span>
+          <div class="title">ÚLTIMAS NOTÍCIAS</div>
+        </div>
+        <div>
+          <div class="noticia">
+            <div class="clock-icon"></div>
+            <div class="noticia-content">
+              <div class="titulo">{{ filtrados?.data.last_news[0]?.title }}</div>
+              <div class="descricao">{{ filtrados?.data.last_news[0]?.subtitle }}</div>
+            </div>
+          </div>
+          <div class="noticia">
+            <div class="clock-icon"></div>
+            <div class="noticia-content">
+              <div class="titulo">{{ filtrados?.data.last_news[1]?.title }}</div>
+              <div class="descricao">{{ filtrados?.data.last_news[1]?.subtitle }}</div>
+            </div>
+          </div>
+          <div class="noticia">
+            <div class="clock-icon"></div>
+            <div class="noticia-content">
+              <div class="titulo">{{ filtrados?.data.last_news[2]?.title }}</div>
+              <div class="descricao">{{ filtrados?.data.last_news[2]?.subtitle }}</div>
+            </div>
+          </div>
+          <div class="noticia">
+            <div class="clock-icon"></div>
+            <div class="noticia-content">
+              <div class="titulo">{{ filtrados?.data.last_news[3]?.title }}</div>
+              <div class="descricao">{{ filtrados?.data.last_news[3]?.subtitle }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="mostrarModalResultados">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="destaques-header">
+        <span class="retangle"></span>
+        <div class="title">RESULTADO</div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div *ngFor="let enquete of enquetes?.data">
+        <div *ngIf="enquete.id === resultadoEnqueteId">
+          <div *ngFor="let key of Object.keys(enquete.results)" class="resultado">
+            <div class="result-label">{{ key }}</div>
+            <div class="result-bar">
+              <div class="result-bar-fill" [style.width]="enquete.results[key].percentage"></div>
+              <div class="result-number">{{ enquete.results[key].percentage }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="confirm-button" (click)="fecharModalResultados()">Fechar</button>
+  </div>
+</div>

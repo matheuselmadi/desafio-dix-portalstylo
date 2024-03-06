@@ -1,0 +1,128 @@
+.navbar {
+  width: 100%;
+  height: 176.67px;
+  background-color: #454545;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.logo {
+  width: 210px;
+  height: 50px;
+  position: absolute;
+  top: 45px;
+  left: 10%;
+  //background-image: url('/assets/img/navbar/logo.png');
+  background-size: cover;
+}
+
+.search-box {
+  width: 32%;
+  height: 40px;
+  position: absolute;
+  top: 51px;
+  left: 36%;
+  border-radius: 9px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 9px;
+  opacity: 70%;
+}
+
+.search-box .search-icon {
+  width: 14.44px;
+  height: 14.43px;
+  margin-right: 10px;
+  background-image: url('/assets/img/navbar/lupa.svg');
+  background-size: cover;
+}
+
+.social-icons {
+  width: 169.2px;
+  height: 22.38px;
+  position: absolute;
+  top: 53px;
+  right: 10%;
+  display: flex;
+  gap: 24px;
+}
+
+//.social-icon {
+//  //background-size: cover;
+//}
+
+.instagram {
+  width: 22.38px;
+  height: 22.38px;
+  background-image: url('/assets/img/navbar/instagram-lovo.svg');
+  cursor: pointer;
+}
+
+.facebook {
+  width: 22.38px;
+  height: 21.87px;
+  background-image: url('/assets/img/navbar/facebook-logo.svg');
+  cursor: pointer;
+}
+
+.youtube {
+  width: 25.8px;
+  height: 18.12px;
+  background-image: url('/assets/img/navbar/youtube-logo.svg');
+  cursor: pointer;
+}
+
+.twitter {
+  width: 27.02px;
+  height: 22px;
+  background-image: url('/assets/img/navbar/twitter-logo.svg');
+  cursor: pointer;
+}
+
+.menu {
+  width: 80%;
+  height: 35px;
+  position: absolute;
+  top: 124px;
+  left: 10%;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF;
+  position: relative;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.menu ul li:hover, .menu ul li.selected {
+  background-color: #FC2929;
+  border-radius: 0 5px 0 5px;
+}
+
+.bottom-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #cc0000;
+  position: relative;
+  top: 173px;
+}

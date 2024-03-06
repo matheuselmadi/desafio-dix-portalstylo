@@ -1,0 +1,42 @@
+<div class="footer">
+  <div class="logo">
+    <img src="{{settings?.data.logo_footer}}" alt="Logo" style="width: 323px; height: 77px;"/>
+  </div>
+  <div class="text">
+    {{ settings?.data.footer }}
+  </div>
+  <div class="frame">
+    <div class="title">Transparência</div>
+    <ul class="ul1">
+      <li><a routerLink="/privacy">Política de privacidade</a></li>
+      <li><a routerLink="/privacy">Termos de uso</a></li>
+    </ul>
+    <div class="title2">Acesso Interno</div>
+    <ul>
+      <li><a href="https://local360.com.br/cms/public/login" target="_blank">Painel Administrativo</a></li>
+      <li><a href="#">Webmail</a></li>
+    </ul>
+  </div>
+  <div class="frame2">
+    <div class="title">Mapa do Site</div>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/politica">Política</a></li>
+      <li><a routerLink="/saude">Saúde</a></li>
+    </ul>
+  </div>
+  <div class="frame3">
+    <div class="title">Localização</div>
+    <img src="/assets/img/rodape/map.svg" alt="Mapa Localização"/>
+    <div class="contact">
+      <p><img src="/assets/img/rodape/seta.svg"/> Veja no mapa</p>
+      <p><img src="/assets/img/rodape/email.svg"/> {{settings?.data.email}}</p>
+      <p><img src="/assets/img/rodape/telefone.svg"/> {{settings?.data.whatsapp}}</p>
+    </div>
+  </div>
+  <div class="bottom-bar"></div>
+  <div class="copy-right">© Copyright 2023 Portal Stylo. Todos os direitos reservados</div>
+  <div class="version">V 01.01.01</div>
+  <div class="developed-by">Desenvolvido por</div>
+  <img class="logo-dix" src="/assets/img/rodape/logo-dix.svg" alt="Logo DIX">
+</div>

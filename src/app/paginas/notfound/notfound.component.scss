@@ -1,0 +1,40 @@
+.pagina404 {
+  text-align: center;
+  color: #454545;
+  background-color: #FFFFFF;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.error-icon {
+  fill: #CC0000;
+  margin-bottom: 20px;
+}
+
+.pagina404 h1 {
+  color: #CC0000;
+  font-size: 3em;
+}
+
+.pagina404 p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.home-link {
+  display: inline-block;
+  background-color: #CC0000;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 0 5px 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.home-link:hover {
+  background-color: #990000;
+}
